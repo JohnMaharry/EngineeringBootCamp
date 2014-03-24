@@ -1,0 +1,88 @@
+\documentclass[nonumbers]{ximera}
+%% handout
+%% nohints
+%% space
+%% newpage
+%% nonumbers
+
+\input{../preamble.tex}
+
+\usepackage{pgf}
+
+\pgfmathsetseed{\number\pdfrandomseed} % provide seed for pseudo random generator
+% (change to constant, to get the same random numbers on every time compiling)
+
+% new command to init variables
+\newcommand\initVariables{%
+    \pgfmathsetmacro{\A}{random(6,10)} %
+    \pgfmathsetmacro{\B}{random(1,5)} %
+    \newcommand\firstroot{\pgfmathprint{int(\A)}} % define command to calculate first root
+    \newcommand\secondroot{\pgfmathprint{int(\B)}} % define command to calculate second root
+    \newcommand\middleterm{\pgfmathprint{int(\A + \B)}} % define command to calculate middle term
+    \newcommand\middletermsubtract{\pgfmathprint{int(\A - \B)}} % define command to calculate middle negative term
+    \newcommand\lastterm{\pgfmathprint{int(\A * \B)}} % define command to calculate last term
+}
+
+\prerequisites{none}
+\outcomes{ximeraLatex}
+
+\title{Boot Camp Practice Problems on Factoring}
+
+\begin{document}
+\begin{abstract}
+In this activity we see some examples for factoring polynomials.
+\end{abstract}
+\maketitle
+
+
+\begin{exercise} % factor with both roots negative (x+a)(x+b)
+\initVariables % initialize variables (do this every time you need new numbers)
+Given that $r(v)= v^2 + \middleterm v + \lastterm$, factor the polynomial. 
+\begin{solution}
+\begin{hint}
+If $r(v)$ factors into $r(v)=(x+a)(x+b)$ then what does $a+b$ equal? What about the last times the last i.e. $a * b$?
+\end{hint}
+\begin{hint}
+Think of all the ways to factor $\lastterm$. Try to find a pair that add up to $\middleterm$.
+\end{hint}
+The function $r(v)= v^2 + \middleterm v + \lastterm = (v+ \firstroot)(v+\secondroot)$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} %factor with both roots posivie (x-a)(x-b)
+\initVariables % initialize variables (do this every time you need new numbers)
+Given that $f(v)= v^2 - \middleterm v + \lastterm$, factor the polynomial.
+\begin{solution}
+\begin{hint}
+If $f(v)$ factors into $f(v)=(x+a)(x+b)$ then what does $a+b$ equal? What about the last times the last i.e. $a * b$?
+\end{hint}
+\begin{hint}
+Think of all the ways to factor $\lastterm$. Since the product is positive and the middle term is negative, both factors must negative. 
+\end{hint}
+\begin{hint}
+Try to find a pair for factors of \lastterm that add up to $\middleterm$, then make them both negative.
+\end{hint}
+The function $r(v)= v^2 - \middleterm v + \lastterm = (v - \firstroot)(v - \secondroot)$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} % factor with one root positive and one root negative (x-a)(x+b)
+\initVariables % initialize variables (do this every time you need new numbers)
+Given that $r(v)= v^2 + \middletermsubtract v - \lastterm$, factor the polynomial.
+\begin{solution}
+\begin{hint}Since the constant is negative, one root must be positive and one must be negative. Hence find two factors of \lastterm whose difference is \middletermsubtract.
+\end{hint}
+\begin{hint}
+Think of all the ways to factor $\lastterm$. Try to find a pair that whose difference is $\middletermsubtract$.
+\end{hint}
+The function $r(v)= v^2 + \middletermsubtract v - \lastterm = (v+ \firstroot)(v - \secondroot)$.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\end{document}
