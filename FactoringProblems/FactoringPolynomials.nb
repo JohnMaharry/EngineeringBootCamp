@@ -1,0 +1,353 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19425,        344]
+NotebookOptionsPosition[     19017,        325]
+NotebookOutlinePosition[     19372,        341]
+CellTagsIndexPosition[     19329,        338]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"code", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"func", "=", 
+       RowBox[{"RandomChoice", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "c", ",", "f", ",", "g", ",", "s", ",", "p", ",", "r", ",", "y", ",",
+           "A", ",", "B", ",", "C", ",", "F", ",", "G", ",", "P", ",", "R", 
+          ",", "Y"}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"variable", "=", 
+       RowBox[{"RandomChoice", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "x", ",", "z", ",", "t", ",", "n", ",", "k", ",", "w", ",", "u", ",",
+           "v", ",", "\[Theta]", ",", "\[Psi]"}], "}"}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"a", "=", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"{", 
+         RowBox[{"6", ",", "10"}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"b", "=", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "5"}], "}"}], "]"}]}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"unfactored", " ", "=", 
+      RowBox[{"Expand", "[", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"variable", "+", "a"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"variable", "+", "b"}], ")"}]}], "]"}]}], ";", "\n", 
+     RowBox[{"StringJoin", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<\\\\begin{exercise}\nGiven that $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "func", "]"}], "]"}], ",", "\"\<(\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", "\"\<) = \>\"",
+        ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", 
+         RowBox[{"Expand", "[", "unfactored", "]"}], "]"}], "]"}], ",", 
+       "\"\<$, factor the polynomial. \n\\\\begin{solution}\n\\\\begin{hint}\n\
+If $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "func", "]"}], "]"}], ",", "\"\<(\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", 
+       "\"\<)$ factors into $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "func", "]"}], "]"}], ",", "\"\<(\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", 
+       "\"\<) = (\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", "\"\<+a)(\>\"",
+        ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", 
+       "\"\<+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e.\\ $a \\\\cdot b$? \n\\\\end{hint}\n\\\\begin{hint}\nThink of all \
+the ways to factor $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", 
+         RowBox[{"a", "*", "b"}], "]"}], "]"}], ",", 
+       "\"\<$. Try to find a pair that add up to $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", 
+         RowBox[{"a", "+", "b"}], "]"}], "]"}], ",", 
+       "\"\<$.\n\\\\end{hint}\nThe function $\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "func", "]"}], "]"}], ",", "\"\<(\>\"", ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", "variable", "]"}], "]"}], ",", "\"\<) =\>\"", 
+       ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"TeXForm", "[", 
+         RowBox[{"Expand", "[", "unfactored", "]"}], "]"}], "]"}], ",", 
+       "\"\<\n\\\\end{solution}\n\\\\end{exercise}\\n\\n\>\""}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.598112582278224*^9, 3.598112602091975*^9}, {
+   3.5981126694973707`*^9, 3.598112679303165*^9}, {3.598112713769826*^9, 
+   3.598112836398057*^9}, {3.598112908954523*^9, 3.598112935446889*^9}, {
+   3.598113001176607*^9, 3.598113003263892*^9}, {3.598113040605562*^9, 
+   3.5981131474412117`*^9}, {3.5981133801435347`*^9, 3.598113426893941*^9}, {
+   3.59811369504626*^9, 3.59811373193602*^9}, {3.598113777958041*^9, 
+   3.598113859527132*^9}, {3.598113891601923*^9, 3.598113935253399*^9}, {
+   3.598113977406464*^9, 3.598113992682344*^9}, {3.598114496574131*^9, 
+   3.598114508361435*^9}, {3.598114809195814*^9, 3.5981148198694887`*^9}, {
+   3.598114853472272*^9, 3.5981149418960743`*^9}, {3.598115008957177*^9, 
+   3.598115012018718*^9}, {3.598115043632379*^9, 3.5981150876644*^9}, 
+   3.5981151544565773`*^9, {3.5981152032734528`*^9, 3.5981152034777737`*^9}, {
+   3.598115354785915*^9, 3.598115356952414*^9}, {3.5982835545056753`*^9, 
+   3.598283578464807*^9}, {3.59828362436027*^9, 3.5982836568825493`*^9}, {
+   3.598283705440967*^9, 3.598283738817132*^9}, 3.598283792881958*^9, {
+   3.5982840042172613`*^9, 3.598284007582128*^9}, {3.598284093875924*^9, 
+   3.598284097792898*^9}, {3.598284140254838*^9, 3.598284169977989*^9}, {
+   3.5982842052099133`*^9, 3.598284252047327*^9}, 3.598284324994225*^9, {
+   3.598284472064413*^9, 3.598284740571666*^9}, {3.5982847932938643`*^9, 
+   3.5982848166102047`*^9}, {3.598284847134804*^9, 3.5982849024465837`*^9}, {
+   3.598285038414216*^9, 3.598285270535515*^9}, {3.5982853395660057`*^9, 
+   3.598285514131774*^9}, {3.598285553696995*^9, 3.598285569885055*^9}, {
+   3.598285611082849*^9, 3.598285624047594*^9}, {3.5982857218207893`*^9, 
+   3.5982857976526423`*^9}, {3.598285883147511*^9, 3.598286032660495*^9}, {
+   3.5982860863082323`*^9, 3.5982861062006893`*^9}, {3.598286154132226*^9, 
+   3.5982863026639967`*^9}, {3.598286363564191*^9, 3.598286366019484*^9}, {
+   3.598286492728746*^9, 3.598286531509922*^9}, {3.598286570952807*^9, 
+   3.598286646420281*^9}, {3.598286719071868*^9, 3.598286812524333*^9}, {
+   3.5982868681812077`*^9, 3.598286871799667*^9}, {3.598287025864119*^9, 
+   3.598287081698373*^9}, {3.5982871264044533`*^9, 3.598287126901002*^9}, {
+   3.5982871683347263`*^9, 3.5982871710959044`*^9}, {3.598287240672961*^9, 
+   3.598287274676816*^9}, 3.598287347680585*^9, {3.5982873916041203`*^9, 
+   3.5982874086422586`*^9}, {3.598287451114109*^9, 3.598287474514018*^9}, {
+   3.5982875880793123`*^9, 3.598287593850408*^9}, {3.598287642648219*^9, 
+   3.598287660069417*^9}, {3.598287712636978*^9, 3.598287771054824*^9}, {
+   3.598287801859667*^9, 3.598287820501639*^9}, {3.5982878855830793`*^9, 
+   3.598287945774222*^9}, {3.5982881458723907`*^9, 3.598288272885358*^9}, {
+   3.59828833892997*^9, 3.5982884872560883`*^9}, {3.598288982964488*^9, 
+   3.598289082505932*^9}, {3.5982891128687963`*^9, 3.598289152532049*^9}, {
+   3.5982891853056726`*^9, 3.598289185943892*^9}, {3.598289298289113*^9, 
+   3.598289328242957*^9}, {3.5987395340199738`*^9, 3.5987396608752737`*^9}, {
+   3.598739769194265*^9, 3.598739795730814*^9}, {3.59873986963725*^9, 
+   3.5987398835398903`*^9}, {3.5987787859383307`*^9, 3.598778790554565*^9}, {
+   3.598778821104553*^9, 3.598778823584256*^9}, {3.598779436652259*^9, 
+   3.5987794559562902`*^9}, {3.5987846880135517`*^9, 3.598784741024415*^9}, {
+   3.598784999911028*^9, 3.598785004523638*^9}, {3.600622601185508*^9, 
+   3.6006226063307734`*^9}, {3.600816588246068*^9, 3.6008165979726343`*^9}, {
+   3.6008231589013157`*^9, 3.600823171058824*^9}, {3.6008232061833963`*^9, 
+   3.6008232064853573`*^9}, {3.6008233943425007`*^9, 3.600823394740375*^9}, {
+   3.600823435077557*^9, 3.600823456015666*^9}, {3.6008237238263807`*^9, 
+   3.600823749785037*^9}, {3.600823780867907*^9, 3.600823799740863*^9}, {
+   3.600823832140807*^9, 3.6008238325252*^9}, {3.600825846440443*^9, 
+   3.600825855574263*^9}, {3.6008261917326117`*^9, 3.600826207057765*^9}, {
+   3.600826238791316*^9, 3.60082638481347*^9}, {3.600826431813304*^9, 
+   3.600826463467533*^9}, {3.600827231933859*^9, 3.600827249548456*^9}, {
+   3.600827309548974*^9, 3.600827346333935*^9}, {3.600827380744185*^9, 
+   3.6008274438866034`*^9}, 3.600827512668488*^9, {3.6008276561926126`*^9, 
+   3.6008276814208384`*^9}, {3.600827727500496*^9, 3.6008277379244328`*^9}, {
+   3.600827849944397*^9, 3.600827908524411*^9}, {3.6008279756924067`*^9, 
+   3.600828259386305*^9}, {3.600829907087537*^9, 3.600829907179926*^9}, {
+   3.600829968921212*^9, 3.600829972368127*^9}, {3.604741914667797*^9, 
+   3.60474212028496*^9}, {3.604742162629551*^9, 3.604742406788063*^9}, {
+   3.604742515428878*^9, 3.604742598672061*^9}, {3.604742646547819*^9, 
+   3.604742713728076*^9}, {3.604742776700781*^9, 3.604742849666597*^9}, {
+   3.6047428976037083`*^9, 3.6047429357691507`*^9}, {3.6047430146031723`*^9, 
+   3.6047431087969637`*^9}, {3.604743146158122*^9, 3.6047431472882633`*^9}, {
+   3.6047431837259283`*^9, 3.604743200784276*^9}, {3.604743256449531*^9, 
+   3.6047433347416487`*^9}, {3.604743409205636*^9, 3.604743462860376*^9}, {
+   3.6047435226530933`*^9, 3.604743596147279*^9}, {3.604743658891396*^9, 
+   3.6047437421185923`*^9}, {3.604743954032843*^9, 3.6047439549274483`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "code"}]], "Input",
+ CellChangeTimes->{{3.604742051911181*^9, 3.6047420522360697`*^9}, 
+   3.604742296794113*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringJoin", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{"code", ",", 
+    RowBox[{"{", "18", "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.604743896824869*^9, 3.604743905733055*^9}, {
+  3.604743941462764*^9, 3.6047439478002768`*^9}}],
+
+Cell[BoxData["\<\"\\\\begin{exercise}\\nGiven that $c(x) = x^2+11 x+18$, \
+factor the polynomial. \\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $c(x)$ \
+factors into $c(x) = (x+a)(x+b)$, then what does $a+b$ equal? What about the \
+``last times the last,'' i.e. $a \\\\cdot b$? \
+\\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor $18$. \
+Try to find a pair that add up to $11$.\\n\\\\end{hint}\\nThe function $c(x) \
+=x^2+11 x+18\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\\
+nGiven that $F(x) = x^2+13 x+30$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $F(x)$ factors into $F(x) = \
+(x+a)(x+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $30$. Try to find a pair that add up to \
+$13$.\\n\\\\end{hint}\\nThe function $F(x) =x^2+13 \
+x+30\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$A(t) = t^2+14 t+45$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $A(t)$ factors into $A(t) = \
+(t+a)(t+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $45$. Try to find a pair that add up to \
+$14$.\\n\\\\end{hint}\\nThe function $A(t) =t^2+14 \
+t+45\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$G(u) = u^2+12 u+20$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $G(u)$ factors into $G(u) = \
+(u+a)(u+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $20$. Try to find a pair that add up to \
+$12$.\\n\\\\end{hint}\\nThe function $G(u) =u^2+12 \
+u+20\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$Y(\\\\theta) = \\\\theta ^2+13 \\\\theta +30$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $Y(\\\\theta)$ factors into $Y(\
+\\\\theta) = (\\\\theta+a)(\\\\theta+b)$, then what does $a+b$ equal? What \
+about the ``last times the last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\
+\\begin{hint}\\nThink of all the ways to factor $30$. Try to find a pair that \
+add up to $13$.\\n\\\\end{hint}\\nThe function $Y(\\\\theta) =\\\\theta ^2+13 \
+\\\\theta \
++30\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$G(z) = z^2+12 z+20$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $G(z)$ factors into $G(z) = \
+(z+a)(z+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $20$. Try to find a pair that add up to \
+$12$.\\n\\\\end{hint}\\nThe function $G(z) =z^2+12 \
+z+20\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$F(\\\\psi) = \\\\psi ^2+10 \\\\psi +16$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $F(\\\\psi)$ factors into $F(\\\
+\\psi) = (\\\\psi+a)(\\\\psi+b)$, then what does $a+b$ equal? What about the \
+``last times the last,'' i.e. $a \\\\cdot b$? \
+\\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor $16$. \
+Try to find a pair that add up to $10$.\\n\\\\end{hint}\\nThe function \
+$F(\\\\psi) =\\\\psi ^2+10 \\\\psi \
++16\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$P(u) = u^2+11 u+30$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $P(u)$ factors into $P(u) = \
+(u+a)(u+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $30$. Try to find a pair that add up to \
+$11$.\\n\\\\end{hint}\\nThe function $P(u) =u^2+11 \
+u+30\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$c(\\\\psi) = \\\\psi ^2+9 \\\\psi +18$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $c(\\\\psi)$ factors into $c(\\\
+\\psi) = (\\\\psi+a)(\\\\psi+b)$, then what does $a+b$ equal? What about the \
+``last times the last,'' i.e. $a \\\\cdot b$? \
+\\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor $18$. \
+Try to find a pair that add up to $9$.\\n\\\\end{hint}\\nThe function \
+$c(\\\\psi) =\\\\psi ^2+9 \\\\psi +18\\n\\\\end{solution}\\n\\\\end{exercise}\
+\\\\begin{exercise}\\nGiven that $R(k) = k^2+9 k+18$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $R(k)$ factors into $R(k) = \
+(k+a)(k+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $18$. Try to find a pair that add up to \
+$9$.\\n\\\\end{hint}\\nThe function $R(k) =k^2+9 \
+k+18\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$y(\\\\theta) = \\\\theta ^2+12 \\\\theta +20$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $y(\\\\theta)$ factors into $y(\
+\\\\theta) = (\\\\theta+a)(\\\\theta+b)$, then what does $a+b$ equal? What \
+about the ``last times the last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\
+\\begin{hint}\\nThink of all the ways to factor $20$. Try to find a pair that \
+add up to $12$.\\n\\\\end{hint}\\nThe function $y(\\\\theta) =\\\\theta ^2+12 \
+\\\\theta \
++20\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$g(w) = w^2+15 w+50$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $g(w)$ factors into $g(w) = \
+(w+a)(w+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $50$. Try to find a pair that add up to \
+$15$.\\n\\\\end{hint}\\nThe function $g(w) =w^2+15 \
+w+50\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$r(\\\\psi) = \\\\psi ^2+9 \\\\psi +14$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $r(\\\\psi)$ factors into $r(\\\
+\\psi) = (\\\\psi+a)(\\\\psi+b)$, then what does $a+b$ equal? What about the \
+``last times the last,'' i.e. $a \\\\cdot b$? \
+\\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor $14$. \
+Try to find a pair that add up to $9$.\\n\\\\end{hint}\\nThe function \
+$r(\\\\psi) =\\\\psi ^2+9 \\\\psi +14\\n\\\\end{solution}\\n\\\\end{exercise}\
+\\\\begin{exercise}\\nGiven that $s(\\\\psi) = \\\\psi ^2+14 \\\\psi +45$, \
+factor the polynomial. \\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf \
+$s(\\\\psi)$ factors into $s(\\\\psi) = (\\\\psi+a)(\\\\psi+b)$, then what \
+does $a+b$ equal? What about the ``last times the last,'' i.e. $a \\\\cdot \
+b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor \
+$45$. Try to find a pair that add up to $14$.\\n\\\\end{hint}\\nThe function \
+$s(\\\\psi) =\\\\psi ^2+14 \\\\psi \
++45\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$F(n) = n^2+11 n+28$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $F(n)$ factors into $F(n) = \
+(n+a)(n+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $28$. Try to find a pair that add up to \
+$11$.\\n\\\\end{hint}\\nThe function $F(n) =n^2+11 \
+n+28\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\nGiven that \
+$A(t) = t^2+9 t+8$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $A(t)$ factors into $A(t) = \
+(t+a)(t+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $8$. Try to find a pair that add up to \
+$9$.\\n\\\\end{hint}\\nThe function $A(t) =t^2+9 t+8\\n\\\\end{solution}\\n\\\
+\\end{exercise}\\\\begin{exercise}\\nGiven that $P(u) = u^2+11 u+28$, factor \
+the polynomial. \\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $P(u)$ factors \
+into $P(u) = (u+a)(u+b)$, then what does $a+b$ equal? What about the ``last \
+times the last,'' i.e. $a \\\\cdot b$? \
+\\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of all the ways to factor $28$. \
+Try to find a pair that add up to $11$.\\n\\\\end{hint}\\nThe function $P(u) \
+=u^2+11 u+28\\n\\\\end{solution}\\n\\\\end{exercise}\\\\begin{exercise}\\\
+nGiven that $G(z) = z^2+14 z+40$, factor the polynomial. \
+\\n\\\\begin{solution}\\n\\\\begin{hint}\\nIf $G(z)$ factors into $G(z) = \
+(z+a)(z+b)$, then what does $a+b$ equal? What about the ``last times the \
+last,'' i.e. $a \\\\cdot b$? \\n\\\\end{hint}\\n\\\\begin{hint}\\nThink of \
+all the ways to factor $40$. Try to find a pair that add up to \
+$14$.\\n\\\\end{hint}\\nThe function $G(z) =z^2+14 \
+z+40\\n\\\\end{solution}\\n\\\\end{exercise}\"\>"], "Output",
+ CellChangeTimes->{
+  3.604743906557102*^9, {3.604743948293221*^9, 3.604743968888672*^9}}]
+}, Open  ]]
+},
+WindowSize->{682, 708},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 8954, 155, 759, "Input"],
+Cell[9514, 177, 159, 3, 55, "Input"],
+Cell[CellGroupData[{
+Cell[9698, 184, 265, 6, 32, "Input"],
+Cell[9966, 192, 9035, 130, 5741, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
